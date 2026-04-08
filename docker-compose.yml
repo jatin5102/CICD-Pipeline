@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   app:
-    image: cicdDevelopment/node-app:latest
+    image: jatinchauhan/node-app:latest
     container_name: node-app
     ports:
       - "3000:3000"

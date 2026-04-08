@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  IMAGE_NAME: cicdDevelopment/node-app
+  IMAGE_NAME: jatinchauhan/node-app
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
