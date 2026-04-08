@@ -47,27 +47,27 @@ jobs:
         run: docker push $IMAGE_NAME:latest
 
   # deploy:
-    name: Deploy to Server
-    needs: docker
-    runs-on: ubuntu-latest
+  #   name: Deploy to Server
+  #   needs: docker
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          script: |
-            cd /home/ubuntu/app
+  #   steps:
+  #     - name: Deploy via SSH
+  #       uses: appleboy/ssh-action@v1.0.3
+  #       with:
+  #         host: ${{ secrets.SERVER_HOST }}
+  #         username: ${{ secrets.SERVER_USER }}
+  #         key: ${{ secrets.SERVER_SSH_KEY }}
+  #         script: |
+  #           cd /home/ubuntu/app
 
-            docker pull $IMAGE_NAME:latest
+  #           docker pull $IMAGE_NAME:latest
 
-            docker stop node-app || true
-            docker rm node-app || true
+  #           docker stop node-app || true
+  #           docker rm node-app || true
 
-            docker run -d \
-              --name node-app \
-              -p 3000:3000 \
-              --env-file .env \
-              $IMAGE_NAME:latest
+  #           docker run -d \
+  #             --name node-app \
+  #             -p 3000:3000 \
+  #             --env-file .env \
+  #             $IMAGE_NAME:latest
