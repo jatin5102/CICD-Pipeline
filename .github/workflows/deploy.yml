@@ -8,7 +8,7 @@ on:
 env:
   IMAGE_NAME: cicdDevelopment/node-app
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-  
+
 jobs:
   build-test:
     name: Build & Test
@@ -21,10 +21,10 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run Tests
         run: npm test
