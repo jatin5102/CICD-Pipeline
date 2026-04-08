@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  IMAGE_NAME: yourdockerhubusername/node-app
+  IMAGE_NAME: cicdDevelopment/node-app
 
 jobs:
   build-test:
